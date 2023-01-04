@@ -1,35 +1,110 @@
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
+
+import Cookies from 'js-cookie'
 
 import './index.css'
 
-const Header = () => (
-  <nav className="header-container">
-    <div className="logo-and-title-container">
-      <img
-        alt="wave"
-        className="logo"
-        src="https://assets.ccbp.in/frontend/react-js/wave-logo-img.png"
-      />
-      <h1 className="title">Wave</h1>
-    </div>
-    <ul className="nav-items-list">
-      <li className="link-item">
-        <Link className="route-link" to="/">
-          Home
-        </Link>
-      </li>
-      <li className="link-item">
-        <Link className="route-link" to="/about">
-          About
-        </Link>
-      </li>
-      <li className="link-item">
-        <Link className="route-link" to="/contact">
-          Contact
-        </Link>
-      </li>
-    </ul>
-  </nav>
-)
+const Header = props => {
+  const onClickLogout = () => {
+    const {history} = props
+    Cookies.remove('jwt_token')
+    history.replace('/login')
+  }
 
-export default Header
+  return (
+    <nav className="nav-header">
+      <div className="nav-content">
+        <div className="nav-bar-mobile-logo-container">
+          <Link to="/">
+            <img
+              className="website-logo"
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+              alt="website logo"
+            />
+          </Link>
+          <button
+            type="button"
+            className="nav-mobile-btn"
+            onClick={onClickLogout}
+          >
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
+              alt="nav logout"
+              className="nav-bar-img"
+            />
+          </button>
+        </div>
+
+        <div className="nav-bar-large-container">
+          <Link to="/">
+            <img
+              className="website-logo"
+              src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+              alt="website logo"
+            />
+          </Link>
+          <ul className="nav-menu">
+            <li className="nav-menu-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+
+            <li className="nav-menu-item">
+              <Link to="/products" className="nav-link">
+                Products
+              </Link>
+            </li>
+
+            <li className="nav-menu-item">
+              <Link to="/cart" className="nav-link">
+                Cart
+              </Link>
+            </li>
+          </ul>
+          <button
+            type="button"
+            className="logout-desktop-btn"
+            onClick={onClickLogout}
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+      <div className="nav-menu-mobile">
+        <ul className="nav-menu-list-mobile">
+          <li className="nav-menu-item-mobile">
+            <Link to="/" className="nav-link">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-icon.png"
+                alt="nav home"
+                className="nav-bar-img"
+              />
+            </Link>
+          </li>
+
+          <li className="nav-menu-item-mobile">
+            <Link to="/products" className="nav-link">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
+                alt="nav products"
+                className="nav-bar-img"
+              />
+            </Link>
+          </li>
+          <li className="nav-menu-item-mobile">
+            <Link to="/cart" className="nav-link">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-cart-icon.png"
+                alt="nav cart"
+                className="nav-bar-img"
+              />
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  )
+}
+
+export default withRouter(Header)

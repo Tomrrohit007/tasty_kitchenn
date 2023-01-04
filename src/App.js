@@ -1,29 +1,23 @@
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 
-import Header from './components/Header'
-import About from './components/About'
+import LoginForm from './components/LoginForm'
 import Home from './components/Home'
-import Contact from './components/Contact'
+import Products from './components/Products'
+import Cart from './components/Cart'
 import NotFound from './components/NotFound'
-import BlogItemDetails from './components/BlogItemDetails'
+import ProtectedRoute from './components/ProtectedRoute'
 
 import './App.css'
 
 const App = () => (
-  <div className="app-container">
-    <div className="responsive-container">
-      <Header />
-      <div className="app-body">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/blogs/:id" component={BlogItemDetails}/>
-          <Route component={NotFound} />
-        </Switch>
-      </div>
-    </div>
-  </div>
+  <Switch>
+    <Route exact path="/login" component={LoginForm} />
+    <ProtectedRoute exact path="/" component={Home} />
+    <ProtectedRoute exact path="/products" component={Products} />
+    <ProtectedRoute exact path="/cart" component={Cart} />
+    <Route path="/not-found" component={NotFound} />
+    <Redirect to="not-found" />
+  </Switch>
 )
 
 export default App
