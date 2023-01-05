@@ -1,3 +1,5 @@
+/* TODO: Add your CSS here */
+
 .product-item {
   display: flex;
   flex-direction: column;
@@ -6,6 +8,9 @@
   flex-grow: 0;
   flex-shrink: 1;
   margin-right: 20px;
+}
+.link{
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {

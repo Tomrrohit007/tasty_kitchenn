@@ -1,0 +1,35 @@
+.similar-item-image{
+    height: 200px;
+    border-radius: 6px;
+}
+.similar-item-cont{
+    list-style-type: none;
+    padding: 30px;
+    padding-left: 0px;
+    width: 240px;
+}
+
+.price-reviews{
+    display: flex;
+    justify-content: space-between;
+}
+.similar-product-name{
+    font-size: 16px;
+    font-weight: 500;
+    height: 30px;
+}
+.similar-product-brand{
+    color: #475569;
+}
+.similar-product-price{
+    font-size: 17px;
+    font-weight: 500;
+}
+.similar-price-reviews-cont{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rating{
+    height: 26px;
+}
