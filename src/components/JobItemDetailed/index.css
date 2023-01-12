@@ -1,0 +1,109 @@
+.job-page-detail-cont{
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.job-details-cont, .bottom-cont{
+    background-color: #202020;
+    width: 84%;
+    gap: 24px;
+    border-radius: 10px;
+    color: white;
+    padding: 40px;
+    align-self: center;
+    margin: 60px 0px;
+    margin-bottom: 30px;
+
+}
+.description-cont{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.anchor-tag{
+    color: #6366f1;
+    text-decoration: none;
+    font-size: 22px;
+}
+.paraa{
+    font-size: 16px;
+    line-height: 2;
+}
+.skill-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+
+}
+.skill-item{
+    list-style-type: none;
+    display: flex;
+    width: 120px;
+    gap: 20px;
+    align-items: center;
+    flex: 23%;
+    
+}
+.skill-img{
+    height: 40px;
+}
+.skill-name{
+    font-size: 14px;
+    font-weight: 500;
+}
+.skills-cont{
+    margin-top: 30px;
+}
+.life-at-company-cont{
+    margin-top: 50px;
+}
+
+.life-at-company{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+.job-description-para{
+    line-height: 2;
+    font-size: 20px;
+    flex: 56%;
+    
+    
+}
+.company-life-img{
+    flex: 36%;
+    width: 200px;
+}
+
+.bottom-cont{
+    background-color: #000000;
+    min-height: 400px;
+    margin-top: 10px;
+}
+.similar-job-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 40px;
+}
+
+
+
+
+.failure-container{
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 30px;
+}
+.failure-image{
+    width: 400px;
+}
+

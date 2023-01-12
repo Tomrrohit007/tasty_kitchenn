@@ -1,0 +1,19 @@
+.similar-job-item{
+    background-color: #202020;
+    min-height: 200px;
+    width: 32%;
+    list-style-type: none;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cont-location{
+    margin: 10px;
+    justify-content: space-between;
+    padding: 0px;
+}
+.description-heading{
+    font-size: 28px;
+}
