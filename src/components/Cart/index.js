@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import {useHistory } from 'react-router-dom'
+import {useHistory, Link } from 'react-router-dom'
 import CartItem from '../CartItem'
 import Footer from '../Footer'
 import Header from '../Header'
@@ -53,10 +53,6 @@ function Cart() {
       eachCartItem.id!==id))
   }
 
-  const onOrderNow=()=>{
-    history.push("/")
-  }
-
   const onClickPlaceOrder=()=>{
     history.push("/payment")
   }
@@ -92,10 +88,12 @@ for (let i of cartList){
 
   const noItemView = ()=>{
     return <div className='no-item-cart-cont'>
-        <img src='https://res.cloudinary.com/dzqa2dgzj/image/upload/v1675845284/cooking_1_arcyxq.svg' alt="" />
-        <h1 className='no-order-heading'>No Orders Yet</h1>
-        <p className="no-item-cart-para">Your cart is empty. Add something from the menu</p>
-        <button className='order-now' onClick={onOrderNow}>Order Now</button>
+        <img src='https://res.cloudinary.com/dzqa2dgzj/image/upload/v1675845284/cooking_1_arcyxq.svg' alt="empty cart" />
+        <h1 className='no-order-heading'>No Order Yet!</h1>
+        <p className="no-item-cart-para">Your cart is empty. Add something from the menu.</p>
+        <Link to="/">
+          <button className='order-now'>Order now</button>
+        </Link>
     </div>
   }
   return (
