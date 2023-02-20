@@ -1,23 +1,30 @@
-import { Route, Redirect, Switch, BrowserRouter} from 'react-router-dom'
-import Login from './components/Login'
-import Home from './components/Home'
-import Job from './components/Job'
-import NotFound from './components/NotFound'
-import JobItemDetailed from './components/JobItemDetailed'
-import './App.css'
-import ProtectedRoute from './components/ProtectedRoute'
+import React from "react"
+import "./App.css"
+import { Switch, Route, Redirect } from "react-router-dom"
 
+import LoginPage from "./components/LoginPage"
+import Home from "./components/Home"
+import ItemDetailed from "./components/ItemDetailed"
+import Cart from "./components/Cart"
+import NotFound from "./components/NotFound"
 
-const App = () => 
-<BrowserRouter>
+import ProtectedRoute from "./components/ProtectedRoute"
+import PaymentPage from "./components/PaymentPage"
+
+function App() {
+  return (
+    <>
     <Switch>
-        <Route exact path='/login' component={Login} />
-        <ProtectedRoute exact path='/' component={Home} />
-        <ProtectedRoute exact path='/jobs' component={Job} />
-        <Route exact path='/not-found' component={NotFound} />
-        <Route exact path='/jobs/:id' component={JobItemDetailed} />
-        <Redirect to='/not-found' />
+        <Route path="/login" component={LoginPage} />
+        <ProtectedRoute exact path="/" component={Home} />
+        <ProtectedRoute exact path="/cart" component={Cart} />
+        <ProtectedRoute exact path="/restaurant/:id" component={ItemDetailed} />
+        <ProtectedRoute exact path="/payment" component={PaymentPage} />
+        <ProtectedRoute exact path="/not-found" component={NotFound} />
+        <Redirect to="/not-found" />
     </Switch>
-</BrowserRouter>
+    </>
+  )
+}
 
 export default App

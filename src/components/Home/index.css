@@ -1,42 +1,94 @@
-*{
-    padding: 0px;
-    margin: 0px;
-}
-
-.bottom-section-cont{
-    background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
-    background-size: cover;
-    height: 130vh;
+.items-cont, .item-list-cont {
+    width: 1110px;
+    align-self: center;
+  }
+  .home-cont {
     display: flex;
     flex-direction: column;
+    gap: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .restaurants-heading {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    margin: 0px;
+    color: #183b56;
+    padding-bottom: 10px;
+  }
+  .para {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    padding-top:  5px;
+    line-height: 24px;
+    color: #64748b;
+    margin: 0px;
+  }
+  .filter {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: transparent;
+    line-height: 24px;
+    color: #475569;
+    outline: none;
+    border: none;
+  }
+  .filter-icon {
+    height: 24px;
+      width: 24px;
+      font-weight: 600;
+      color: #475569;
+      padding: 1px 8px;
+  }
+  .filter-cont{
+      display: flex;
+      align-items: center;
+  }
+  
+  .upper-section{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 10px 0px;
+  }
+  hr{
+    width: 1110px;
+  }
+  
+  .loader-cont{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    padding: 100px;
-}
-.home-cont{
-    color: white;
-}
-.content-cont{
-    width: 600px;
-}
-
-.home-page-heading{
-    font-size: 60px;
-    padding:20px;
-}
-.home-page-para{
+  }
+  .items-list{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px;
+    gap: 30px;
+  }
+  .pagination-cont{
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+    justify-content:center;
+  }
+  .pagination-para{
+    font-style: normal;
+    font-weight: 400;
     font-size: 20px;
-    line-height: 2;
-    padding:10px 20px;
-}
-.find-job-btn{
-    background-color:#6366f1;
-    border: 0px;
-    color: white;
-    font-size: 12px;
-    height: 34px;
-    width: 90px;
-    border-radius: 4px;
+    line-height: 27px;
+    text-align: center;
+    color: #334155;
     font-weight: 600;
-    cursor: pointer;
-    margin: 20px;
-}
+  }
+  .arrow{
+    border: 1px solid black;
+    padding: 4px;
+    height: 22px;
+    width: 22px;
+  }
