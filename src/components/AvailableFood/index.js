@@ -18,8 +18,12 @@ function AvailableFood(props) {
   };
 
   const onClickMinus = () => {
-    count > 1 && setCount((prev) => prev - 1) 
-    count ===1 && changeState(false)
+   if (count > 1){
+    setCount(prev => prev - 1) 
+  }
+    if(count ===1 ){
+      changeState(false)
+    }
     onDecreaseCount(id)
   };
 
